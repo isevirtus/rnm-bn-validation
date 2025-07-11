@@ -20,13 +20,16 @@ This repository contains:
 git clone https://github.com/<your-user>/rnm-bn-validation.git
 cd rnm-bn-validation
 pip install numpy pandas matplotlib pgmpy
-No genetic algorithm, no calibration step – the network is already tuned.
-You only need the Python dependencies above.
+```
 
-🗂️ Repository Structure
-graphql
-Copiar
-Editar
+> No genetic algorithm, no calibration step – the network is already tuned.  
+> You only need the Python dependencies above.
+
+---
+
+## 🗂️ Repository Structure
+
+```
 rnm-bn-validation/
 ├── data/                       # CSV test suites from domain experts
 │   ├── TPN_AT_validacao.csv
@@ -38,12 +41,15 @@ rnm-bn-validation/
 │   ├── bn_fitness.py           # Calibrated RNM Bayesian Network
 │   └── validation.py           # Command-line validator
 └── repository.json             # Continuous samples used by RNM functions
-🚀 Quick Start
+```
+
+---
+
+## 🚀 Quick Start
+
 Run the validator for each target node:
 
-bash
-Copiar
-Editar
+```bash
 # PC  (parents: OSF, SLF)
 python src/validation.py --file data/TPN_PC_validacao.csv \
                          --target PC \
@@ -63,28 +69,34 @@ python src/validation.py --file data/TPN_AC_validacao.csv \
 python src/validation.py --file data/TPN_AT_validacao.csv \
                          --target AT \
                          --evidence Domain Ecosystem Language
-✅ What you get
+```
+
+---
+
+## ✅ What you get
+
 Console output showing, for every scenario:
 
-Evidence supplied
+- Evidence supplied  
+- Expected distribution (expert)  
+- Predicted distribution (model)  
+- Brier Score
 
-Expected distribution (expert)
+A tidy CSV is saved under `results/`, e.g. `results/PC_validation_results.csv`, containing:
 
-Predicted distribution (model)
+| OSF | SLF | Expected_VL | Expected_L | Expected_M | Expected_H | Expected_VH | Calculated_VL | … | Brier_Score |
+|-----|-----|--------------|------------|------------|------------|--------------|----------------|---|--------------|
 
-Brier Score
+---
 
-A tidy CSV is saved under results/, e.g. results/PC_validation_results.csv, containing:
+## 🖥️ Working on the Network
 
-OSF	SLF	Expected_VL	Expected_L	Expected_M	Expected_H	Expected_VH	Calculated_VL	…	Brier_Score
-
-🖥️ Working on the Network
 If you wish to inspect or extend the RNM network:
 
-python
-Copiar
-Editar
+```python
 from src.bn_fitness import FitnessBayesianNetwork
 net = FitnessBayesianNetwork()
 net.visualize_network()
-The repository.json file provides ≥10 000 continuous samples for each linguistic state (VL, L, M, H, VH) required by the truncated-normal transformation used internally.
+```
+
+The `repository.json` file provides ≥10 000 continuous samples for each linguistic state (`VL`, `L`, `M`, `H`, `VH`) required by the truncated-normal transformation used internally.
