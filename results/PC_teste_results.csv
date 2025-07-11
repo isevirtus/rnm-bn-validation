@@ -1,0 +1,4 @@
+OSF,SLF,Expected_VL,Expected_L,Expected_M,Expected_H,Expected_VH,Calculated_VL,Calculated_L,Calculated_M,Calculated_H,Calculated_VH,Brier_Score
+VL,VH,"0,125","0,425","0,250","0,125","0,075",0.1290,0.2310,0.2800,0.2310,0.1290,0.0105
+VH,M,"0,050","0,083","0,283","0,333","0,250",0.0989,0.2008,0.2767,0.2587,0.1648,0.0058
+M,VH,"0,060","0,100","0,200","0,340","0,300",0.0540,0.1410,0.2510,0.3040,0.2500,0.0016
