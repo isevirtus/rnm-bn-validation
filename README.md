@@ -1,16 +1,15 @@
-# **RNM-BN Validation Suite**
+# **RNM-BN Validation**
 
 > **Validate an already-calibrated Bayesian Network built with the _Ranked Nodes Method_ (RNM) against expert elicitation data.**
 
 This repository contains:
 
 1. **`bn_fitness.py`** – a calibrated RNM Bayesian Network that models  
-   *AT* (Aptidão Técnica), *PC* (Peso de Colaboração), *AC* (Aptidão Colaborativa) e *AE* (Aptidão de Equipe).
+  *AT* (Technical Aptitude), *PC* (Pair Compatibility), *AC* (Collaborative Aptitude) and *AE* (Team Aptitude).
 2. **`validation.py`** – a CLI tool that reads CSV scenarios provided by specialists, feeds them as evidence into the network, and reports **expected vs predicted** distributions together with the **Brier Score** for every case.
-
-> **Terminologia**  
-> • **OSF** – *Objective Success Factor* (fator de sucesso objetivo)  
-> • **SLF** – *Subjective Leadership Factor* (fator de liderança subjetiva)
+ 
+> • **OSF** – *Objective Success Factor*   
+> • **SLF** – *Subjective Leadership Factor* 
 
 ---
 
@@ -36,6 +35,7 @@ rnm-bn-validation/
 │   ├── TPN_PC_validacao.csv
 │   ├── TPN_AC_validacao.csv
 │   └── TPN_AE_validacao.csv
+      ...
 ├── results/                    # Auto-generated validation outputs
 ├── src/
 │   ├── bn_fitness.py           # Calibrated RNM Bayesian Network
