@@ -100,3 +100,4 @@ net.visualize_network()
 ```
 
 The `repository.json` file provides ≥10 000 continuous samples for each linguistic state (`VL`, `L`, `M`, `H`, `VH`) required by the truncated-normal transformation used internally.
+ 
