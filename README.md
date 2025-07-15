@@ -2,27 +2,47 @@
 
 > **Validate an already-calibrated Bayesian Network built with the _Ranked Nodes Method_ (RNM) against expert elicitation data.**
 
+## 📄 Repository Overview
+
 This repository contains:
 
-1. **`bn_fitness.py`** – a calibrated RNM Bayesian Network that models  
-  *AT* (Technical Aptitude), *AC* (Collaborative Aptitude) and *AE* (Team Aptitude).
-2. **`validation.py`** – a CLI tool that reads CSV scenarios provided by specialists, feeds them as evidence into the network, and reports **expected vs predicted** distributions together with the **Brier Score** for every case.
+1. **`src/bn_fitness.py`** – A calibrated Bayesian Network implemented using the Ranked Nodes Method (RNM), modeling Technical Aptitude, Collaborative Aptitude, and Team Aptitude.  
+
+2. **`src/validation.py`** – A command-line interface (CLI) tool to validate the model. It loads input scenarios from CSV files, feeds them into the network, and compares predicted vs expert-provided distributions using **Brier Score**.
+
+3. **`data/`** – Contains the validation inputs (CSV files) with test scenarios provided by domain experts and results, including:
+   - Expert judgments
+   - Normalized probabilities
+   - Mode
+   - Heatmaps
+   - Bar plots
+
+4. **`results/`** – Automatically generated outputs containing expected vs predicted results, along with Brier Scores.
+
+5. **`variable_definitions/`** – Supplementary material describing:
+   - Linguistic scale used for each variable (e.g., "Improbable", "Expected", "Certain")
+   - Concrete examples of what each level means in the context of software projects
 
 ## 🗂️ Repository Structure
 
 ```
 rnm-bn-validation/
-├── data/                       # CSV test suites from domain experts
-│   ├── TPN_AT_validacao.csv
-│   ├── TPN_PC_validacao.csv
-│   ├── TPN_AC_validacao.csv
-│   └── TPN_AE_validacao.csv
-      ...
-├── results/                    # Auto-generated validation outputs
-├── src/
-│   ├── bn_fitness.py           # Calibrated RNM Bayesian Network
-│   └── validation.py           # Command-line validator
-└── repository.json             # Continuous samples used by RNM functions
+├── data/ # Expert inputs and probability distributions
+│ └── expert_inputs_and_results.xlsx
+│ └── TPN_AT_validacao.csv
+│ └── TPN_PC_validacao.csv
+│ └── ...
+├── results/ # Outputs generated after validation
+│ └── AT_validation_results.csv
+│ └── AE_validation_results.csv
+│ ...
+│
+├── src/ # Core code
+│ └── bn_fitness.py # RNM Bayesian Network definition
+│ └── validation.py # CLI validation runner
+│
+├── variable_definitions/ # PDF explanations for each variable and its levels
+│ └── AT_levels_definitions.pdf
 ```
 ---
 
