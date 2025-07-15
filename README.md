@@ -8,21 +8,6 @@ This repository contains:
   *AT* (Technical Aptitude), *AC* (Collaborative Aptitude) and *AE* (Team Aptitude).
 2. **`validation.py`** – a CLI tool that reads CSV scenarios provided by specialists, feeds them as evidence into the network, and reports **expected vs predicted** distributions together with the **Brier Score** for every case.
 
----
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/<your-user>/rnm-bn-validation.git
-cd rnm-bn-validation
-pip install numpy pandas matplotlib pgmpy
-```
-
-> No genetic algorithm, no calibration step – the network is already tuned.  
-> You only need the Python dependencies above.
-
----
-
 ## 🗂️ Repository Structure
 
 ```
@@ -39,6 +24,18 @@ rnm-bn-validation/
 │   └── validation.py           # Command-line validator
 └── repository.json             # Continuous samples used by RNM functions
 ```
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/<your-user>/rnm-bn-validation.git
+cd rnm-bn-validation
+pip install numpy pandas matplotlib pgmpy
+```
+
+> No genetic algorithm, no calibration step – the network is already tuned.  
+> You only need the Python dependencies above.
 
 ---
 
