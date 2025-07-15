@@ -20,7 +20,7 @@ This repository contains:
 4. **`results/`** – Automatically generated outputs containing expected vs predicted results, along with Brier Scores.
 
 5. **`variable_definitions/`** – Supplementary material describing:
-   - Linguistic scale used for each variable (e.g., "Improbable", "Expected", "Certain")
+   - Description for each variable level  (VL - VH)
    - Concrete examples of what each level means in the context of software projects
 
 ## 🗂️ Repository Structure
