@@ -30,7 +30,7 @@ rnm-bn-validation/
 ├── data/ # Expert inputs and probability distributions
 │ └── expert_inputs_and_results.xlsx
 │ └── TPN_AT_validacao.csv
-│ └── TPN_PC_validacao.csv
+│ └── TPN_AC_validacao.csv
 │ └── ...
 ├── results/ # Outputs generated after validation
 │ └── AT_validation_results.csv
