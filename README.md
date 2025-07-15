@@ -46,7 +46,7 @@ rnm-bn-validation/
 
 Run the validator for each target node:
 
-# How Input Files Are Read
+### How Input Files Are Read
 The validation.py script receives all its inputs via command-line arguments, allowing users to validate any node in the network without modifying the code. The general structure of the command is:
 ```bash
 python <path_to_script>/validation.py \
