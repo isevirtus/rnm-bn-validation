@@ -48,15 +48,16 @@ Run the validator for each target node:
 
 # How Input Files Are Read
 The validation.py script receives all its inputs via command-line arguments, allowing users to validate any node in the network without modifying the code. The general structure of the command is:
-
+```bash
 python <path_to_script>/validation.py \
        --file <path_to_data>/<validation_input_file>.csv \
        --target <target_variable> \
        --evidence <evidence_var1> <evidence_var2> ...
+
 --file: path to the CSV file containing expert scenarios.
 
 --target: the node in the network you want to validate.
-
+```
 --evidence: the parent nodes of the target, provided as evidence for inference.
 
 Each row in the CSV must include values for all evidence variables and the expected probability distribution for the target variable.
