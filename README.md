@@ -57,9 +57,9 @@ python <path_to_script>/validation.py \
 --file: path to the CSV file containing expert scenarios.
 
 --target: the node in the network you want to validate.
-```
---evidence: the parent nodes of the target, provided as evidence for inference.
 
+--evidence: the parent nodes of the target, provided as evidence for inference.
+```
 Each row in the CSV must include values for all evidence variables and the expected probability distribution for the target variable.
 
 # Example
