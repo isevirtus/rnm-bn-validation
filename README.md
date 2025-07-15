@@ -62,7 +62,7 @@ python <path_to_script>/validation.py \
 ```
 Each row in the CSV must include values for all evidence variables and the expected probability distribution for the target variable.
 
-# Example
+### Example
 For validating the variable AE (Team Aptitude), whose parents are AT (Technical Aptitude) and AC (Collaborative Aptitude), the command would be:
 ```bash
 python src/validation.py --file data/TPN_AE_validacao.csv \
@@ -78,12 +78,12 @@ Calculate the Brier Score for each scenario.
 The output is printed to the console and saved in the results/ directory with a structured table including evidence, expected distribution, model prediction, and error metrics.
 
 ```bash
-# AC (parents: PC_VH … PC_VL)
+### AC (parents: PC_VH … PC_VL)
 python src/validation.py --file data/TPN_AC_validacao.csv \
                          --target AC \
                          --evidence PC_VH PC_H PC_M PC_L PC_VL
 
-# AT (parents: Domain, Ecosystem, Language)
+### AT (parents: Domain, Ecosystem, Language)
 python src/validation.py --file data/TPN_AT_validacao.csv \
                          --target AT \
                          --evidence Domain Ecosystem Language
