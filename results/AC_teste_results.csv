@@ -1,4 +1,0 @@
-PC_VH,PC_H,PC_M,PC_L,PC_VL,Expected_VL,Expected_L,Expected_M,Expected_H,Expected_VH,Calculated_VL,Calculated_L,Calculated_M,Calculated_H,Calculated_VH,Brier_Score
-VL,VL,M,VL,M,"0,263","0,132","0,447","0,079","0,079",0.2062,0.2843,0.2663,0.1702,0.0731,0.0135
-VL,VL,L,VL,H,"0,340","0,300","0,200","0,100","0,060",0.2660,0.3100,0.2450,0.1310,0.0480,0.0017
-VL,VL,H,VL,L,"0,106","0,213","0,362","0,319","0,000",0.1528,0.2498,0.2787,0.2108,0.1079,0.0068
