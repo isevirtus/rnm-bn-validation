@@ -15,7 +15,7 @@ This repository contains:
    - Normalized probabilities
    - Mode
    - Heatmaps
-   - Bar plots
+   - Brier scores
 
 4. **`results/`** – Automatically generated outputs containing expected vs predicted results, along with Brier Scores.
 
