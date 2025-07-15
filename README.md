@@ -5,11 +5,8 @@
 This repository contains:
 
 1. **`bn_fitness.py`** – a calibrated RNM Bayesian Network that models  
-  *AT* (Technical Aptitude), *PC* (Pair Compatibility), *AC* (Collaborative Aptitude) and *AE* (Team Aptitude).
+  *AT* (Technical Aptitude), *AC* (Collaborative Aptitude) and *AE* (Team Aptitude).
 2. **`validation.py`** – a CLI tool that reads CSV scenarios provided by specialists, feeds them as evidence into the network, and reports **expected vs predicted** distributions together with the **Brier Score** for every case.
- 
-> • **OSF** – *Objective Success Factor*   
-> • **SLF** – *Subjective Leadership Factor* 
 
 ---
 
@@ -45,21 +42,41 @@ rnm-bn-validation/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 Run the validator for each target node:
 
-```bash
-# PC  (parents: OSF, SLF)
-python src/validation.py --file data/TPN_PC_validacao.csv \
-                         --target PC \
-                         --evidence OSF SLF
+# How Input Files Are Read
+The validation.py script receives all its inputs via command-line arguments, allowing users to validate any node in the network without modifying the code. The general structure of the command is:
 
-# AE (parents: AT, AC)
+python <path_to_script>/validation.py \
+       --file <path_to_data>/<validation_input_file>.csv \
+       --target <target_variable> \
+       --evidence <evidence_var1> <evidence_var2> ...
+--file: path to the CSV file containing expert scenarios.
+
+--target: the node in the network you want to validate.
+
+--evidence: the parent nodes of the target, provided as evidence for inference.
+
+Each row in the CSV must include values for all evidence variables and the expected probability distribution for the target variable.
+
+# Example
+For validating the variable AE (Team Aptitude), whose parents are AT (Technical Aptitude) and AC (Collaborative Aptitude), the command would be:
+
 python src/validation.py --file data/TPN_AE_validacao.csv \
                          --target AE \
                          --evidence AT AC
+This command will:
 
+Read TPN_AE_validacao.csv from the data/ folder.
+
+Use each row’s AT and AC values as input evidence. Run inference on the calibrated RNM Bayesian Network. Compare the predicted and expected distributions.
+Calculate the Brier Score for each scenario.
+
+The output is printed to the console and saved in the results/ directory with a structured table including evidence, expected distribution, model prediction, and error metrics.
+
+```bash
 # AC (parents: PC_VH … PC_VL)
 python src/validation.py --file data/TPN_AC_validacao.csv \
                          --target AC \
@@ -70,9 +87,7 @@ python src/validation.py --file data/TPN_AT_validacao.csv \
                          --target AT \
                          --evidence Domain Ecosystem Language
 ```
-
 ---
-
 ## ✅ What you get
 
 Console output showing, for every scenario:
@@ -84,7 +99,7 @@ Console output showing, for every scenario:
 
 A tidy CSV is saved under `results/`, e.g. `results/PC_validation_results.csv`, containing:
 
-| OSF | SLF | Expected_VL | Expected_L | Expected_M | Expected_H | Expected_VH | Calculated_VL | … | Brier_Score |
+| Var1 | Var n | Expected_VL | Expected_L | Expected_M | Expected_H | Expected_VH | Calculated_VL | … | Brier_Score |
 |-----|-----|--------------|------------|------------|------------|--------------|----------------|---|--------------|
 
 ---
