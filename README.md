@@ -64,14 +64,14 @@ Each row in the CSV must include values for all evidence variables and the expec
 
 # Example
 For validating the variable AE (Team Aptitude), whose parents are AT (Technical Aptitude) and AC (Collaborative Aptitude), the command would be:
-
+```bash
 python src/validation.py --file data/TPN_AE_validacao.csv \
                          --target AE \
                          --evidence AT AC
 This command will:
 
 Read TPN_AE_validacao.csv from the data/ folder.
-
+```
 Use each row’s AT and AC values as input evidence. Run inference on the calibrated RNM Bayesian Network. Compare the predicted and expected distributions.
 Calculate the Brier Score for each scenario.
 
